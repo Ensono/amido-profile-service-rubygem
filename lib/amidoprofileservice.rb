@@ -1,7 +1,6 @@
-require 'profile-service/version'
-
-require 'api'
-require 'profile_service_uri'
+require 'amidoprofileservice/version'
+require 'amidoprofileservice/api'
+require 'amidoprofileservice/profile_service_uri'
 
 class Amidoprofileservice
   def initialize(subscription_key)
