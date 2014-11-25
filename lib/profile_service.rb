@@ -1,12 +1,14 @@
 require 'profile-service/version'
 
 require 'api'
-require 'uri'
+require 'profile_service_uri'
 
 class ProfileService
   def initialize(subscription_key)
     throw :no_subscription_key if subscription_key.nil?
     @subscription_key = subscription_key
+
+    @api = Api.new(subscription_key)
   end
 
 =begin
@@ -25,9 +27,10 @@ class ProfileService
     throw :no_realm_passed if realm.nil?
     throw :no_user_id_passed if user_id.nil?
 
-    uri = Uri.create_profile realm, user_id
+    uri = ProfileServiceUri.create_profile realm, user_id
 
     result = Api.post(uri, profile)
+
   end
 
 

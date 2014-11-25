@@ -26,10 +26,10 @@ describe ProfileService do
     valid_realm = 'my.realm.com'
     valid_user_id = 'user_id'
 
-    resulting_url = 'http://some_uri'
+    resulting_url = '/some_uri'
 
     it 'should load the uri using the parameters' do
-      allow(Uri).to receive(:create_profile).with(valid_realm, valid_user_id).and_return(resulting_url)
+      allow(ProfileServiceUri).to receive(:create_profile).with(valid_realm, valid_user_id).and_return(resulting_url)
 
       @service.create_profile valid_realm, valid_user_id, {}
     end
@@ -37,10 +37,10 @@ describe ProfileService do
     it 'should call post on the api with the correct parameters' do
       profile = { :name => 'dave' }
 
-      allow(Uri).to receive(:create_profile).with(valid_realm, valid_user_id).and_return(resulting_url)
+      allow(ProfileServiceUri).to receive(:create_profile).with(valid_realm, valid_user_id).and_return(resulting_url)
       allow(Api).to receive(:post).with(resulting_url, profile)
 
-      expect(Uri).to receive(:create_profile).with(valid_realm, valid_user_id)
+      expect(ProfileServiceUri).to receive(:create_profile).with(valid_realm, valid_user_id)
       expect(Api).to receive(:post).with(resulting_url, profile)
 
       @service.create_profile valid_realm, valid_user_id, profile
