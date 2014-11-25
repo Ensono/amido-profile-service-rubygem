@@ -1,14 +1,14 @@
 require 'spec_helper'
 
-describe ProfileService do
+describe Amidoprofileservice do
 
   before do
-    @service = ProfileService.new('subscription_key')
+    @service = Amidoprofileservice.new('subscription_key')
   end
 
   describe '#constructor' do
     it 'should throw an error when no parameter is passed' do
-      expect { ProfileService.new(nil) }.to throw_symbol(:no_subscription_key)
+      expect { Amidoprofileservice.new(nil) }.to throw_symbol(:no_subscription_key)
     end
   end
 

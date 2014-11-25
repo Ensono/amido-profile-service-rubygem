@@ -1,4 +1,4 @@
-require 'profile_service' # and any other gems you need
+require 'amidoprofileservice' # and any other gems you need
 require 'profile_service_uri'
 require 'httparty'
 
