@@ -5,7 +5,7 @@ require 'profile-service/version'
 require 'profile_service'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'amido-profile-service'
+  spec.name          = 'amidoprofileservice'
   spec.version       = Amido::ProfileService::VERSION
   spec.authors       = ['Antony Koch']
   spec.email         = ['ant@iamkoch.com']

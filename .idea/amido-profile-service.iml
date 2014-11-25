@@ -86,7 +86,7 @@
     <orderEntry type="jdk" jdkName="rbenv: 2.1.0" jdkType="RUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
-      <library name="amido-profile-service (v[path], /Users/Ant/programming/ruby/amido-profile-service) [path][gem]">
+      <library name="amidoprofileservice (v[path], /Users/Ant/programming/ruby/amido-profile-service) [path][gem]">
         <CLASSES>
           <root url="file://$MODULE_DIR$/bin" />
           <root url="file://$MODULE_DIR$/lib" />
