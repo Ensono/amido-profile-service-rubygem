@@ -2,7 +2,7 @@ require 'amidoprofileservice/version'
 require 'amidoprofileservice/api'
 require 'amidoprofileservice/profile_service_uri'
 
-class Amidoprofileservice
+class AmidoProfileService
   def initialize(subscription_key)
     throw :no_subscription_key if subscription_key.nil?
     @subscription_key = subscription_key

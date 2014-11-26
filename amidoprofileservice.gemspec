@@ -2,7 +2,7 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'amidoprofileservice/version'
-require 'amidoprofileservice'
+require 'amido_profile_service'
 
 Gem::Specification.new do |spec|
   spec.name          = 'amidoprofileservice'
