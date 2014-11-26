@@ -4,8 +4,6 @@ require 'httparty'
 class Api
   include HTTParty
 
-  base_uri 'https://amidouserprofile.azure-api.net/client/api'
-
   def initialize(subscription_key)
     @subscription_key = subscription_key
   end

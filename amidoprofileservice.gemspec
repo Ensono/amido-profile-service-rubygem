@@ -10,6 +10,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Antony Koch']
   spec.email         = ['ant@iamkoch.com']
   spec.summary       = %q{Ruby Gem to access the Amido profile service}
+  spec.description   = %q{This gem allows subscribers to the amido profile service to consume the service in Ruby}
   spec.homepage      = 'http://amido.com'
   spec.license       = 'MIT'
 
@@ -19,9 +20,9 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_development_dependency 'bundler', '~> 1.6'
-  spec.add_development_dependency 'rake'
-  spec.add_development_dependency 'rspec'
-  spec.add_development_dependency 'capybara'
+  spec.add_development_dependency 'rake', '1.5.2'
+  spec.add_development_dependency 'rspec', '3.1.0'
+  spec.add_development_dependency 'capybara', '2.4.4'
 
-  spec.add_dependency 'httparty'
+  spec.add_dependency 'httparty', '0.11.0'
 end

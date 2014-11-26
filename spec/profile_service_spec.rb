@@ -26,7 +26,7 @@ describe Amidoprofileservice do
     valid_realm = 'my.realm.com'
     valid_user_id = 'user_id'
 
-    resulting_url = '/some_uri'
+    resulting_url = 'https://amidouserprofile.azure-api.net/client/api/some_uri'
 
     it 'should load the uri using the parameters' do
       allow(ProfileServiceUri).to receive(:create_profile).with(valid_realm, valid_user_id).and_return(resulting_url)
