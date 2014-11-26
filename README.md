@@ -1,12 +1,12 @@
-# Amido::Profile::Service
+# AmidoProfileService
 
-TODO: Write a gem description
+This gem is used in conjunction with the Amido profile service to persist and retrieve profiles.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'amido-profile-service'
+    gem 'amidoprofileservice'
 
 And then execute:
 
@@ -14,11 +14,23 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install amido-profile-service
+    $ gem install amidoprofileservice
 
 ## Usage
 
-TODO: Write usage instructions here
+Create a new instance
+```ruby
+require 'amidoprofileservice'
+
+service = AmidoProfileService.new('subscription_key_here')
+```
+
+Then call the API via the following methods
+
+```ruby
+service.create_profile('realm_here', 'user_id_here', 'delegate_access_token_here', { :name => 'Peter' })
+```
+
 
 ## Contributing
 
