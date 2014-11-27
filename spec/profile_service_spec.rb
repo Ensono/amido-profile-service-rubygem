@@ -212,4 +212,36 @@ describe AmidoProfileService do
 
   end
 
+  describe '#is_profile_complete' do
+
+    it 'should throw an error when no realm is passed' do
+      expect { @service.is_profile_complete(nil, nil, nil) }.to throw_symbol(:no_realm_passed)
+    end
+
+    it 'should throw an error when no user id is passed' do
+      expect { @service.is_profile_complete(@valid_realm, nil, nil) }.to throw_symbol(:no_user_id_passed)
+    end
+
+    it 'should throw an error when no delegate token is passed' do
+      expect { @service.is_profile_complete(@valid_realm, @valid_user_id, nil) }.to throw_symbol(:no_delegate_token_passed)
+    end
+
+    it 'should call get on the api with the correct parameters and return an OK result' do
+
+      allow(ProfileServiceUri).to receive(:is_profile_complete).with(@valid_realm, @valid_user_id).and_return(@resulting_url)
+
+      expect(ProfileServiceUri).to receive(:is_profile_complete).with(@valid_realm, @valid_user_id)
+
+      api = double('api')
+      allow(api).to receive(:get).with(@resulting_url, @valid_delegate_token).and_return @success_result
+      @service.api = api
+      result = @service.is_profile_complete @valid_realm, @valid_user_id, @valid_delegate_token
+
+      expect(result).to be_instance_of(ProfileServiceResult)
+      expect(result.code).to eq(:OK)
+      expect(result.body).to eq(@profile)
+    end
+
+  end
+
 end

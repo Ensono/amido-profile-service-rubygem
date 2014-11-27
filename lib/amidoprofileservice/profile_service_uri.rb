@@ -9,6 +9,10 @@ class ProfileServiceUri
     "#{base_url}/profiles/#{URI::encode(realm)}/#{URI::encode(user_id)}"
   end
 
+  def self.is_profile_complete(realm, user_id)
+    "#{base_url}/profiles/#{URI::encode(realm)}/#{URI::encode(user_id)}/status"
+  end
+
   def self.nested_profile(realm, user_id)
     "#{base_url}/nestedprofiles/#{URI::encode(realm)}/#{URI::encode(user_id)}"
   end

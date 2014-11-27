@@ -9,6 +9,13 @@ describe ProfileServiceUri do
     end
 
   end
+  describe '#is_profile_complete' do
+
+    it 'should build the uri correctly' do
+      expect(ProfileServiceUri.is_profile_complete 'my.realm.com', 'my_user_id').to eq('https://amidouserprofile.azure-api.net/client/api/profiles/my.realm.com/my_user_id/status')
+    end
+
+  end
 
   describe '#nested_profile' do
 

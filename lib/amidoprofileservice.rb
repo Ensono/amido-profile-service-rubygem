@@ -61,6 +61,18 @@ class AmidoProfileService
     ProfileServiceResult.new(result)
   end
 
+  def is_profile_complete(realm, user_id, delegate_token)
+    throw :no_realm_passed if realm.nil?
+    throw :no_user_id_passed if user_id.nil?
+    throw :no_delegate_token_passed if delegate_token.nil?
+
+    uri = ProfileServiceUri.is_profile_complete realm, user_id
+
+    result = @api.get(uri, delegate_token)
+
+    ProfileServiceResult.new(result)
+  end
+
   def get_nested_fieldset(realm, fieldset_name)
     throw :no_realm_passed if realm.nil?
     throw :no_fieldsetname_passed if fieldset_name.nil?
