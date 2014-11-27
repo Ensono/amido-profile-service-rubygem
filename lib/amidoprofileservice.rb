@@ -4,6 +4,8 @@ require 'amidoprofileservice/profile_service_uri'
 require 'amidoprofileservice/profile_service_result'
 
 class AmidoProfileService
+  attr_accessor :api
+
   def initialize(subscription_key)
     throw :no_subscription_key if subscription_key.nil?
     @subscription_key = subscription_key
@@ -14,6 +16,7 @@ class AmidoProfileService
   def create_profile(realm, user_id, delegate_token, profile = {})
     throw :no_realm_passed if realm.nil?
     throw :no_user_id_passed if user_id.nil?
+    throw :no_delegate_token_passed if delegate_token.nil?
 
     uri = ProfileServiceUri.profile realm, user_id
 
@@ -25,6 +28,7 @@ class AmidoProfileService
   def update_profile(realm, user_id, delegate_token, profile = {})
     throw :no_realm_passed if realm.nil?
     throw :no_user_id_passed if user_id.nil?
+    throw :no_delegate_token_passed if delegate_token.nil?
 
     uri = ProfileServiceUri.profile realm, user_id
 
@@ -36,6 +40,7 @@ class AmidoProfileService
   def get_profile(realm, user_id, delegate_token)
     throw :no_realm_passed if realm.nil?
     throw :no_user_id_passed if user_id.nil?
+    throw :no_delegate_token_passed if delegate_token.nil?
 
     uri = ProfileServiceUri.profile realm, user_id
 
@@ -47,6 +52,7 @@ class AmidoProfileService
   def get_nested_profile(realm, user_id, delegate_token)
     throw :no_realm_passed if realm.nil?
     throw :no_user_id_passed if user_id.nil?
+    throw :no_delegate_token_passed if delegate_token.nil?
 
     uri = ProfileServiceUri.nested_profile realm, user_id
 
