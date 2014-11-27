@@ -5,6 +5,8 @@ class Api
   include HTTParty
 
   def initialize(subscription_key)
+    throw :no_subscription_key_provided if subscription_key.nil?
+
     @subscription_key = subscription_key
   end
 
