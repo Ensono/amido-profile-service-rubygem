@@ -1,3 +1,6 @@
+require 'simplecov'
+SimpleCov.start
+
 require 'amidoprofileservice' # and any other gems you need
 require 'httparty'
 

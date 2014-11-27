@@ -18,4 +18,20 @@ describe ProfileServiceUri do
 
   end
 
+  describe '#nested_fieldset' do
+
+    it 'should build the uri correctly' do
+      expect(ProfileServiceUri.nested_fieldset 'my.realm.com', 'register').to eq('https://amidouserprofile.azure-api.net/client/api/nestedfieldsets/my.realm.com/register')
+    end
+
+  end
+
+  describe '#fieldset' do
+
+    it 'should build the uri correctly' do
+      expect(ProfileServiceUri.fieldset 'my.realm.com', 'register').to eq('https://amidouserprofile.azure-api.net/client/api/fieldsets/my.realm.com/register')
+    end
+
+  end
+
 end
